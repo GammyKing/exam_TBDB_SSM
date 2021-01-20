@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+<!--    登陆账号密码验证，返回对象。-->
+    <select id="queryUser" parameterType="User" resultType="User">
+        select acc,pwd from user where acc=#{acc},pwd=#{pwd}
+    </select>
+<!--    注册信息录入-->
+    <insert id="registerUser" parameterType="User">
+        insert into User(id,username,pwd,acc,phone,email,createtime,isdelete) value(#{id},#{username},#{pwd},#{acc},#{phone},#{email},#{createtime},#{isdelete})
+    </insert>
+
+</mapper>

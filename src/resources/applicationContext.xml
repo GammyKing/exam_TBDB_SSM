@@ -47,8 +47,8 @@
         <property name="patterns">
             <list>
                 <!--需要扫描代码的包-->
-                <value>com.controller.*</value>
-                <value>com.service.*</value>
+                <value>controller.*</value>
+                <value>service.*</value>
             </list>
         </property>
     </bean>
@@ -102,15 +102,15 @@
     <!--  Spring 接管sqlSessionFactory  -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="pooledDataSource"/>
-        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
 <!--        别名设置为类名（直接类名）-->
-        <property name="typeAliasesPackage" value="com.entity"/>
+        <property name="typeAliasesPackage" value="pojo"/>
         <property name="configuration" ref="setting"/>
     </bean>
 
 <!--    因为Spring接管整个工程，对整个工程具有扫描权限，mybatis定位mapper代理接口，Spring将扫描事宜交给Mybatis-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value = "com.dao"/>
+        <property name="basePackage" value = "dao"/>
 <!--        名称引用value-->
         <property name="sqlSessionFactoryBeanName" value = "sqlSessionFactory"/>
     </bean>
