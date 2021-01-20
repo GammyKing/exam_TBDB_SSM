@@ -66,7 +66,7 @@ public class UserController {
         return result;
     }
 
-    //    忘记密码 参数 email
+    //    忘记密码
     @RequestMapping(value = "/forgetPassword")
     @ResponseBody
     public boolean forgetPassword(@RequestBody User user) {

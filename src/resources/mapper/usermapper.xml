@@ -29,6 +29,6 @@
     </update>
 <!--    忘记密码，先验证账号存在，后修改密码-->
     <select id="forgetSelectUser" parameterType="User" resultType="User">
-        select * from user where email = #{email}
+        select * from user where email = #{email},acc=#{acc}
     </select>
 </mapper>
