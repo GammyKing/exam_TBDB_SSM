@@ -1,5 +1,7 @@
 package com.pojo;
 
+import java.util.Date;
+
 /**
  * @author xhz
  * @description 用户对象
