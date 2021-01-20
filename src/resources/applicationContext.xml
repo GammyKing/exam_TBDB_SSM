@@ -42,8 +42,8 @@
         <property name="patterns">
             <list>
                 <!--需要扫描代码的包-->
-                <value>controller.*</value>
-                <value>service.*</value>
+                <value>com.controller.*</value>
+                <value>com.service.*</value>
             </list>
         </property>
     </bean>

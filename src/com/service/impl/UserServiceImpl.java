@@ -7,6 +7,7 @@ import com.pojo.User;
 import com.service.UserService;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -31,12 +32,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean register(User user) {
         Date date = new Date();
+
 //        设置三个固定属性
         user.setId(UUID.randomUUID().toString());
-        user.setCreatetime(DateFormatUtil.getDateFormat().toString());
+        user.setCreatetime(DateFormatUtil.date2String(date));
         user.setIsdelete(0);
-        int i = userDao.registerUser(user);
-        return i != 0;
+        int i=0;
+        if (user.getAcc()!=null){
+             i = userDao.registerUser(user);
+            return i != 0;
+        }else {
+            return false;
+        }
     }
 //  用户查看信息  传入参数为acc
     @Override
