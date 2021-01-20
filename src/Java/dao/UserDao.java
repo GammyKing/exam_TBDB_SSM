@@ -13,4 +13,7 @@ import pojo.User;
 public interface UserDao {
     User queryUser(User user);
     int registerUser(User user);
+    User CheckInfo(User user);
+    int modifyInfo(User user);
+    User modifyInfoSelect(String acc);
 }

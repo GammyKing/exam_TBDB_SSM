@@ -37,7 +37,23 @@ public class UserServiceImpl implements UserService {
         int i = userDao.registerUser(user);
         return i != 0;
     }
-
+//  用户查看信息  传入参数为acc
+    @Override
+    public User userCheckInfo(User user) {
+        return userDao.CheckInfo(user);
+    }
+//   用户修改信息
+//    前端需要判定回传的内容是否为空
+    @Override
+    public User modifyInfo(User user) {
+        int i = userDao.modifyInfo(user);
+        User resultUser = null;
+        if(i!=0){
+//            success
+            resultUser = userDao.modifyInfoSelect(user.getAcc());
+        }
+        return resultUser;
+    }
 
 
 }

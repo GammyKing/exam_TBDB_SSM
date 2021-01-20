@@ -9,7 +9,18 @@
     </select>
 <!--    注册信息录入-->
     <insert id="registerUser" parameterType="User">
-        insert into User(id,username,pwd,acc,phone,email,createtime,isdelete) value(#{id},#{username},#{pwd},#{acc},#{phone},#{email},#{createtime},#{isdelete})
+        insert into user(id,username,pwd,acc,phone,email,createtime,isdelete) value(#{id},#{username},#{pwd},#{acc},#{phone},#{email},#{createtime},#{isdelete})
     </insert>
-
+<!--    用户查看信息-->
+    <select id="CheckInfo" parameterType="User" resultType="User">
+        select username,phone,email from user where acc = #{acc}
+    </select>
+<!--    用户修改信息-->
+    <update id="modifyInfo" parameterType="User">
+        update user set username = #{username},phone=#{phone},email=#{email} where acc=#{acc}
+    </update>
+<!--    用户信息修改后回显-->
+    <select id="modifyInfoSelect" parameterType="string" resultType="User">
+        select username,phone,email from user where acc=#{value}
+    </select>
 </mapper>

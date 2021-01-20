@@ -12,4 +12,6 @@ import pojo.User;
 public interface UserService {
    boolean checkLogin(User user);
    boolean register(User user);
+   User userCheckInfo(User user);
+   User modifyInfo(User user);
 }

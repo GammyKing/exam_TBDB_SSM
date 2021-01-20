@@ -38,17 +38,17 @@ public class UserController {
 //  用户查看信息
     @RequestMapping(value = "/userCheckInfo")
     @ResponseBody
-    public void userCheckInfo(@RequestBody User user){
-
+    public User userCheckInfo(@RequestBody User user){
+        return userService.userCheckInfo(user);
 
     }
 //    用户修改信息
     @RequestMapping(value = "/userModifyInfo")
     @ResponseBody
-    public void userModifyInfo(){
-
+    public User userModifyInfo(User user){
+        return userService.modifyInfo(user);
     }
-
+//      修改密码
     @RequestMapping(value = "/modifypassword")
     @ResponseBody
     public void modifypassword(){
