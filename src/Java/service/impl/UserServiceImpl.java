@@ -55,5 +55,24 @@ public class UserServiceImpl implements UserService {
         return resultUser;
     }
 
+//    用户修改密码
+    @Override
+    public boolean modifyPwd(User user) {
+        int i = userDao.modifyPwd(user);
+        return i != 0;
+    }
+
+//    用户忘记密码
+    @Override
+    public boolean forgetPwd(User user) {
+//       先确定该账户存在
+        boolean result = false;
+        User exitUser = userDao.forgetSelectUser(user);
+        if (exitUser!=null){
+           result = true;
+        }
+        return result;
+    }
+
 
 }

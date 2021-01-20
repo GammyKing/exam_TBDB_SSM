@@ -14,4 +14,6 @@ public interface UserService {
    boolean register(User user);
    User userCheckInfo(User user);
    User modifyInfo(User user);
+   boolean modifyPwd(User user);
+   boolean forgetPwd(User user);
 }

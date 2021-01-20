@@ -16,4 +16,7 @@ public interface UserDao {
     User CheckInfo(User user);
     int modifyInfo(User user);
     User modifyInfoSelect(String acc);
+    int modifyPwd(User user);
+    User forgetSelectUser(User user);
+
 }

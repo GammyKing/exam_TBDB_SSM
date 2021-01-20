@@ -23,4 +23,12 @@
     <select id="modifyInfoSelect" parameterType="string" resultType="User">
         select username,phone,email from user where acc=#{value}
     </select>
+
+    <update id="modifyPwd" parameterType="User">
+        update user set pwd = #{pwd} where email = #{email}
+    </update>
+<!--    忘记密码，先验证账号存在，后修改密码-->
+    <select id="forgetSelectUser" parameterType="User" resultType="User">
+        select * from user where email = #{email}
+    </select>
 </mapper>
