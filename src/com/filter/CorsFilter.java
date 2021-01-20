@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @Component
 //允许跨域
-@WebFilter(filterName = "CORSFilter", urlPatterns = {"/aaa"})
+@WebFilter(filterName = "CORSFilter", urlPatterns = {"/*"})
 public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
