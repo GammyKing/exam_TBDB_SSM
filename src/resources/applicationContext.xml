@@ -17,6 +17,9 @@
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 <!--    后台测试时 扫描配置-->
 <!--    <context:component-scan base-package="com"/>-->
+    <context:component-scan base-package="com">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
 <!--    配置Mybatis相关内容 Spring接管Mybatis-->
 <!--    读取jdbc.properties配置-->
@@ -47,8 +50,8 @@
         <property name="patterns">
             <list>
                 <!--需要扫描代码的包-->
-                <value>controller.*</value>
-                <value>service.*</value>
+                <value>com.controller.*</value>
+                <value>com.service.*</value>
             </list>
         </property>
     </bean>
@@ -104,13 +107,13 @@
         <property name="dataSource" ref="pooledDataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
 <!--        别名设置为类名（直接类名）-->
-        <property name="typeAliasesPackage" value="pojo"/>
+        <property name="typeAliasesPackage" value="com.pojo"/>
         <property name="configuration" ref="setting"/>
     </bean>
 
 <!--    因为Spring接管整个工程，对整个工程具有扫描权限，mybatis定位mapper代理接口，Spring将扫描事宜交给Mybatis-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value = "dao"/>
+        <property name="basePackage" value = "com.dao"/>
 <!--        名称引用value-->
         <property name="sqlSessionFactoryBeanName" value = "sqlSessionFactory"/>
     </bean>

@@ -1,4 +1,4 @@
-package filter;
+package com.filter;
 
 import org.springframework.stereotype.Component;
 
@@ -10,11 +10,11 @@ import java.io.IOException;
 
 @Component
 //允许跨域
-@WebFilter(filterName = "CORSFilter", urlPatterns = {"/aaa"})
+@WebFilter(filterName = "CORSFilter", urlPatterns = {"/*"})
 public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        System.out.println("------------------------------------");
     }
 
     @Override

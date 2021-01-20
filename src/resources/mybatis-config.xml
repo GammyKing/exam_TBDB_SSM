@@ -13,8 +13,8 @@
         <setting name="mapUnderscoreToCameClass" value="true"/>
     </settings>
     <typeAliases>
-        <typeAlias type="pojo.User" alias="User"/>
-        <typeAlias type="pojo.Manager" alias="Manager"/>
+        <typeAlias type="com.pojo.User" alias="User"/>
+        <typeAlias type="com.pojo.Manager" alias="Manager"/>
     </typeAliases>
     <environments default="env">
         <environment id="env">

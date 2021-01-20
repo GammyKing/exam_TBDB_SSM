@@ -1,6 +1,4 @@
-package pojo;
-
-import java.util.Date;
+package com.pojo;
 
 /**
  * @author xhz
