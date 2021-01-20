@@ -1,8 +1,8 @@
-package dao;
+package com.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
-import pojo.User;
+
+import com.pojo.User;
 
 /**
  * @author xhz

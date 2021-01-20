@@ -1,10 +1,11 @@
-package service.impl;
+package com.service.impl;
 
-import dao.UserDao;
+import com.dao.UserDao;
+import com.util.DateFormatUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import pojo.User;
-import service.UserService;
-import util.DateFormatUtil;
+import com.pojo.User;
+import com.service.UserService;
+
 
 import java.util.Date;
 import java.util.UUID;

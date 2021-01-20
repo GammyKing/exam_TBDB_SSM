@@ -1,4 +1,4 @@
-package filter;
+package com.filter;
 
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package service;
+package com.service;
 
 import org.springframework.stereotype.Service;
-import pojo.User;
+import com.pojo.User;
 
 /**
  * @author xhz
